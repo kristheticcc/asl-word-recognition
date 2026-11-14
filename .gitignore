@@ -95,7 +95,7 @@ data/raw/*
 # Generated processed files
 data/processed/*
 !data/processed/vocabulary_26.txt
-!data/processed/sample_landmarks.npy
+#!data/processed/sample_landmarks.npy
 
 # Generated results
 results/figures/*
