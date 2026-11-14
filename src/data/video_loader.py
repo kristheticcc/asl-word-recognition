@@ -12,6 +12,8 @@ def load_video(video_path: Path):
     if not capture.isOpened():
         raise RuntimeError(f"Could not open video: {video_path}")
 
+    fps = capture.get(cv2.CAP_PROP_FPS)     # Get frame per seconds
+
     # List for all frames of the video
     frames = []
     try:
@@ -33,15 +35,16 @@ def load_video(video_path: Path):
     if not frames:
         raise RuntimeError(f"No frames can be read from: {video_path}")
 
-    return frames   # return the list of frames
+    return frames, fps   # return the list of frames and frames per second
 
 # Testing function on a video
 if __name__ == "__main__":
     project_root = Path(__file__).resolve().parents[2]
     video_path = project_root / "data" / "raw" / "videos" / "69302.mp4"
 
-    frames = load_video(video_path)
+    frames, fps = load_video(video_path)
 
     print(f"Video: {video_path}")
     print(f"Frames loaded: {len(frames)}")
     print(f"Frame shape: {frames[0].shape}")    # first frame's height, width, color channels
+    print(f"FPS: {fps}")
