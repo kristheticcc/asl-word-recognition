@@ -39,7 +39,12 @@ def extract_landmarks(frames, fps, landmarker):
 
         # Fill slots with actual coordinates
         for hand_number, hand in enumerate(result.hand_landmarks[:2]):
-            coordinates[hand_number] = [
+
+            handedness = result.handedness[hand_number][0].category_name
+
+            slot = 0 if handedness == "Left" else 1
+
+            coordinates[slot] = [
                 [landmark.x, landmark.y, landmark.z] for landmark in hand
             ]
 

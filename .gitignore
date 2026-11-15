@@ -92,10 +92,14 @@ tempCodeRunnerFile.py
 data/raw/*
 !data/raw/.gitkeep
 
-# Generated processed files
+# Generated preprocessing outputs
+data/preprocessed/*
+!data/preprocessed/metadata.csv
+!data/preprocessed/landmarks/
+
+# Existing processed data rules
 data/processed/*
 !data/processed/vocabulary_26.txt
-#!data/processed/sample_landmarks.npy
 
 # Generated results
 results/figures/*
