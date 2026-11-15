@@ -96,6 +96,7 @@ data/raw/*
 data/preprocessed/*
 !data/preprocessed/metadata.csv
 !data/preprocessed/landmarks/
+data/preprocessed/landmarks/**
 
 # Existing processed data rules
 data/processed/*
